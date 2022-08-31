@@ -1,0 +1,358 @@
+/* src/components/auctionHouseFilter/AuctionHouseFilter.scss */
+.auction-house-filter {
+  display: flex;
+  padding: 1rem;
+}
+
+/* src/components/realmFilter/RealmFilter.scss */
+.realm-filter {
+  display: flex;
+  padding: 1rem;
+}
+
+/* src/components/auction/Auction.scss */
+.auction {
+  display: flex;
+  margin-left: 50px;
+}
+.auction span {
+  display: flex;
+  align-items: center;
+  flex-basis: 14.2857142857%;
+  margin: 3px 0px;
+  border-bottom: 1px solid #fff;
+}
+.auction span .currency {
+  display: flex;
+  flex-basis: 100%;
+  justify-content: flex-end;
+  padding: 0px 20px;
+}
+.auction span .currency span {
+  border-bottom-width: 0px;
+}
+.auction span.bid,
+.auction span.buyout {
+  justify-content: flex-end;
+}
+.auction span.bid.error,
+.auction span.buyout.error {
+  color: red;
+}
+.auction span.item {
+  border-left: 1px solid #fff;
+  padding: 2px 5px;
+}
+.auction span.item img {
+  width: 30px;
+  height: 30px;
+}
+.auction span.item .item-name {
+  display: flex;
+  flex-basis: 100%;
+  border-bottom-width: 0px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.auction span.item .item-name.common {
+  color: #fff;
+}
+.auction span.item .item-name.poor {
+  color: gray;
+}
+.auction span.item .item-name.uncommon {
+  color: #1eff00;
+}
+.auction span.item .item-name.rare {
+  color: #0070dd;
+}
+.auction span.item .item-name.epic {
+  color: #a335ee;
+}
+.auction span.item .item-name.legendary {
+  color: #ff8000;
+}
+.auction span.actions {
+  display: flex;
+}
+.auction span.actions button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  background-color: #0074e0;
+  color: #fff;
+  font-style: bold;
+  padding: 2px 10px;
+  border-radius: 5px;
+  margin: 2px;
+}
+.auction span.actions button:disabled {
+  background-color: gray;
+  cursor: default;
+}
+.auction span.actions button:first-child {
+  margin-left: 0px;
+}
+.auction span.actions button.make-bid,
+.auction span.actions button.cancel {
+  background-color: transparent;
+  padding: 0px;
+}
+.auction span.actions button.make-bid:disabled,
+.auction span.actions button.cancel:disabled {
+  background-color: gray;
+}
+.auction span.bidding {
+  margin-left: 0px;
+  border-bottom-width: 0px;
+}
+.auction span.bidding input {
+  width: 100px;
+}
+
+/* src/components/auctions/Auctions.scss */
+.auctions-list {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+}
+.auctions-list .auctions-header {
+  display: flex;
+  margin-top: 50px;
+  margin-left: 50px;
+  margin-bottom: 20px;
+}
+.auctions-list .auctions-header span {
+  display: flex;
+  flex-basis: 14.2857142857%;
+  margin: 3px 0px;
+}
+.auctions-list .auctions-header span:first-child {
+  padding: 2px 5px;
+}
+.auctions-list__items {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  overflow-y: scroll;
+}
+.auctions-list .empty-auction-house {
+  display: flex;
+  justify-content: center;
+}
+
+/* src/shared/components/modal/Modal.scss */
+.modal-background {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  top: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.modal-content {
+  position: absolute;
+  z-index: 101;
+  display: flex;
+  flex-direction: column;
+  background-color: #292b33;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+  width: 60vw;
+  height: 40vh;
+  top: 20%;
+  left: 20%;
+}
+.modal-content__header {
+  display: flex;
+  align-items: center;
+  height: 3rem;
+  margin: 0px;
+  padding-left: 20px;
+  cursor: default;
+  background-color: rgba(255, 255, 255, 0.06);
+}
+.modal-content__body {
+  display: flex;
+  height: calc(100% - 3rem);
+}
+
+/* src/components/new-auction/NewAuction.scss */
+.new-auction {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  width: 100%;
+}
+.new-auction .empty-items {
+  display: flex;
+  text-align: center;
+}
+.new-auction .item-to-auction,
+.new-auction .bid,
+.new-auction .buyout,
+.new-auction .actions {
+  display: flex;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.new-auction .item-to-auction.error,
+.new-auction .item-to-auction input.error,
+.new-auction .bid.error,
+.new-auction .bid input.error,
+.new-auction .buyout.error,
+.new-auction .buyout input.error,
+.new-auction .actions.error,
+.new-auction .actions input.error {
+  border: 1px solid red;
+}
+.new-auction select.error {
+  border: 1px solid red;
+}
+.new-auction select.common {
+  color: #fff;
+}
+.new-auction select.poor {
+  color: gray;
+}
+.new-auction select.uncommon {
+  color: #1eff00;
+}
+.new-auction select.rare {
+  color: #0070dd;
+}
+.new-auction select.epic {
+  color: #a335ee;
+}
+.new-auction select.legendary {
+  color: #ff8000;
+}
+.new-auction select option.common {
+  color: #fff !important;
+}
+.new-auction select option.poor {
+  color: gray !important;
+}
+.new-auction select option.uncommon {
+  color: #1eff00 !important;
+}
+.new-auction select option.rare {
+  color: #0070dd !important;
+}
+.new-auction select option.epic {
+  color: #a335ee !important;
+}
+.new-auction select option.legendary {
+  color: #ff8000 !important;
+}
+.new-auction .actions {
+  justify-content: flex-end;
+}
+.new-auction .actions button:first-child {
+  margin-right: 20px;
+}
+
+/* src/App.scss */
+.app-container {
+  width: 100vw;
+  height: 100vh;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  font-family: monospace;
+  justify-content: space-between;
+  color: #fff;
+}
+.app-container button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  background-color: #0074e0;
+  color: #fff;
+  font-style: bold;
+  padding: 2px 10px;
+  border-radius: 5px;
+  margin: 2px;
+  align-self: center;
+}
+.app-container button:disabled {
+  background-color: gray;
+}
+.app-container select {
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid #fff;
+  color: #fff;
+  margin: 0px;
+  padding: 0px;
+}
+.app-container select option {
+  width: max-content;
+  background-color: #313339;
+  margin: 0px;
+  padding: 0px;
+}
+header.app-header {
+  height: 3rem;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #15171e;
+  border-bottom: 1px solid #313339;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  background-color: #1a1c23;
+  border-bottom: 1px solid #313339;
+}
+main .filters {
+  display: flex;
+  border-bottom: 1px solid #313339;
+}
+footer {
+  display: flex;
+  background-color: #1a1c23;
+  justify-content: center;
+}
+
+/* src/index.scss */
+body {
+  margin: 0;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
+    "Oxygen",
+    "Ubuntu",
+    "Cantarell",
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+code {
+  font-family:
+    source-code-pro,
+    Menlo,
+    Monaco,
+    Consolas,
+    "Courier New",
+    monospace;
+}
+/*# sourceMappingURL=bundle.css.map */
