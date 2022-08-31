@@ -7,7 +7,7 @@
   "scripts": {
     "lint": "eslint src tests --ext js,ts,tsx --max-warnings 0",
     "build:clean": "powershell remove-item ./config/tsconfig.tsbuildinfo, ./temp, ./www/*, ./dist -force -recurse -ErrorAction SilentlyContinue & exit 0",
-    "build:public": "powershell copy-item -Path ./public/* -Destination ./www/ -Recurse",
+    "build:public": "powershell copy-item -Path ./public/* -Destination (new-item ./www -Type Directory -Force) -Recurse",
     "build:ts": "tsc --project ./config/tsconfig.json -noEmit --jsx preserve",
     "build:bundle": "node ./scripts/build.js",
     "build": "yarn run build:clean && yarn run build:public && yarn run build:ts && yarn run build:bundle && yarn run lint && yarn run test",
