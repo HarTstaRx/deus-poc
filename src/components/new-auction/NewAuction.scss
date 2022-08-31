@@ -1,0 +1,80 @@
+.new-auction {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  width: 100%;
+
+  .empty-items {
+    display: flex;
+    text-align: center;
+  }
+
+  .item-to-auction,
+  .bid,
+  .buyout,
+  .actions {
+    display: flex;
+    margin-bottom: 20px;
+    width: 100%;
+
+    &.error,
+    input.error {
+      border: 1px solid red;
+    }
+  }
+
+  select {
+    &.error {
+      border: 1px solid red;
+    }
+    &.common {
+      color: #fff;
+    }
+    &.poor {
+      color: gray;
+    }
+    &.uncommon {
+      color: #1eff00;
+    }
+    &.rare {
+      color: #0070dd;
+    }
+    &.epic {
+      color: #a335ee;
+    }
+    &.legendary {
+      color: #ff8000;
+    }
+
+    option {
+      &.common {
+        color: #fff !important;
+      }
+      &.poor {
+        color: gray !important;
+      }
+      &.uncommon {
+        color: #1eff00 !important;
+      }
+      &.rare {
+        color: #0070dd !important;
+      }
+      &.epic {
+        color: #a335ee !important;
+      }
+      &.legendary {
+        color: #ff8000 !important;
+      }
+    }
+  }
+
+  .actions {
+    justify-content: flex-end;
+
+    button {
+      &:first-child {
+        margin-right: 20px;
+      }
+    }
+  }
+}

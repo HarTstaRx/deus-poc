@@ -1,0 +1,46 @@
+{
+  "name": "deuspoc",
+  "version": "1.0.0",
+  "main": "www/bundle.js",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint src tests --ext js,ts,tsx --max-warnings 0",
+    "build:clean": "powershell remove-item ./config/tsconfig.tsbuildinfo, ./temp, ./www/*, ./dist -force -recurse -ErrorAction SilentlyContinue & exit 0",
+    "build:public": "powershell copy-item -Path ./public/* -Destination ./www/ -Recurse",
+    "build:ts": "tsc --project ./config/tsconfig.json -noEmit --jsx preserve",
+    "build:bundle": "node ./scripts/build.js",
+    "build": "yarn run build:clean && yarn run build:public && yarn run build:ts && yarn run build:bundle && yarn run lint && yarn run test",
+    "start:server": "servor www index.html 2022 --reload --browse",
+    "start:watch": "node ./scripts/watch.js",
+    "start": "yarn run build && yarn run start:server",
+    "test": "jest"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "oidc-client-ts": "^2.0.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.20",
+    "@types/node": "^18.7.14",
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.35.1",
+    "@typescript-eslint/parser": "^5.35.1",
+    "chokidar": "^3.5.3",
+    "dotenv": "^16.0.2",
+    "esbuild": "^0.15.6",
+    "esbuild-env-parsing": "^1.0.3",
+    "esbuild-sass-plugin": "^2.3.2",
+    "eslint": "^7.19.0",
+    "eslint-plugin-react": "^7.31.1",
+    "jest": "^26.6.3",
+    "servor": "^4.0.2",
+    "typescript": "^4.1.3"
+  },
+  "eslintConfig": {
+    "extends": "./config/.eslintrc.json"
+  }
+}
