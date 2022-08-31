@@ -71,11 +71,16 @@ export const NewAuction = ({ handleCancel }: NewAuctionProps): JSX.Element => {
     //   select.className = newItem?.quality?.toLocaleLowerCase() ?? '';
     // }
     /*
-    Usar el ref aquí no está bien, porque da lugar a bugs, como cuando sale el modal 
+    TODO: Usar el ref aquí no está bien, porque da lugar a bugs, como cuando sale el modal 
      y automáticamente das a crear subasta para que salte la primera validación, para
      cambiar el valor del item y si te fijas "no se aplica" la clase; esto sucede porque, 
      aunque por código sí has cambiado la clase, react no lo va a reflejar hasta el siguiente render,
      useRef es un hook muy útil (para observar el dom, para modificar flags...), pero aquí no procede.
+    TODOENG: useRef here does no good, it's prone to bugs, like when the modal pops up and 
+     automatically you create an auction in order to trigger the first validation and change the
+     item value, and if you pay close attention "it doesn't applies" the class name; this occurs because,
+     although the code does change the class name, react is not going to replicate that change till the next render,
+     useRef is a very handy hook (watching the dom, modifiyng flags...), but we should'nt apply it's use here.
     */
   };
 

@@ -5,6 +5,7 @@ import { parseAsEnvs } from 'esbuild-env-parsing';
 
 dotenv.config({});
 // TODO: Averiguar porqué esbuild.serve no levantaba el servidor...
+// TODOENG: Find out why esbuild.serve doesn't starts a server...
 esbuild.serve({
   servedir: 'www',
   entryPoints: ['src/index.tsx'],
