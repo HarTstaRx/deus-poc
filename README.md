@@ -5,7 +5,7 @@ Welcome to the result of one of the technical challenges recently proposed to me
 
 We are looking for kind-of CRUD operations:
 
-Pick a public API. Choose the topic that you like the most, here are some examples:
+Pick a [public API](https://github.com/public-apis/public-apis). Choose the topic that you like the most, here are some examples:
 * Marvel comics
 * Spotify
 * Punk Brewery
@@ -25,6 +25,8 @@ Comments:
 * When you're finished, share the result by email in a zip or with an invitation to a private repository in Github or Bitbucket.
 
 ## Configuration
+
+From the propossed list I chose https://battle.net.
 
 In order to launching the project you will need:
 
