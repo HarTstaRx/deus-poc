@@ -46,3 +46,5 @@ In order to start the project you will need up to two consoles:
 * If you wanna make changes to the code you will need another console for running `yarn start:watch` in order to watch the src folder and redeploy those changes.
 
 If you want to launch the project on linux or mac you can use `yarn mac:start` instead of `yarn start`
+
+If you have any questions, doubts or any issue you can reach me via email.
