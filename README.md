@@ -47,4 +47,6 @@ In order to start the project you will need up to two consoles:
 
 If you want to launch the project on linux or mac you can use `yarn mac:start` instead of `yarn start`
 
-If you have any questions, doubts or any issue you can reach me via email.
+## Feedback
+
+I would love to receive some feedback about this project. If you have any questions, doubts or any issue feel free to reach me via email.
