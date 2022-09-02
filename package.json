@@ -17,6 +17,7 @@
     "start:server": "servor www index.html 2022 --reload --browse",
     "start:watch": "node ./scripts/watch.js",
     "start": "yarn run build && yarn run start:server",
+    "mac:start": "yarn run mac:build && yarn run start:server",
     "test": "jest"
   },
   "dependencies": {
