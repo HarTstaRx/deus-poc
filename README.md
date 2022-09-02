@@ -40,6 +40,7 @@ In order to launching the project you will need:
       REACT_APP_CLIENT_ID="YOURCLIENTID"
       REACT_APP_CLIENT_SECRET="YOURCLIENTSECRET"
 * Create your own client at https://develop.battle.net/access/clients and overwritting its `client_id` and `client_secret` at the `env` file.
+* Make sure in your client settings `Service Url` and `Redirect URLs` both have the same value `http://localhost:2022`
 
 ## Starting up
 
