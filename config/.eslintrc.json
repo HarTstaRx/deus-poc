@@ -3,6 +3,11 @@
         "browser": true,
         "es2021": true
     },
+    "settings": {
+      "react": {
+          "version": "detect"
+      }
+    },
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
@@ -29,7 +34,7 @@
         "@typescript-eslint/no-unused-params": "off"
     },
     "overrides": [{
-        "files": ["tests/**/*.ts"],
+        "files": ["tests/**/*.ts?(x)"],
         "env": { "jest": true, "browser": true }
     }]
 }

@@ -2,8 +2,8 @@ import { User } from 'oidc-client-ts';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 
-import { AuctionHouseFilter } from './components/auctionHouseFilter/AuctionHouseFilter';
-import { RealmFilter } from './components/realmFilter/RealmFilter';
+import { AuctionHouseFilter } from './components/auction-house-filter/AuctionHouseFilter';
+import { RealmFilter } from './components/realm-filter/RealmFilter';
 import { authenticationService } from './services';
 import { InterceptorService } from './services';
 import { LoginMetadataInterface } from './shared/interfaces';

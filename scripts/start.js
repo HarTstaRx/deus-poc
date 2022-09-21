@@ -1,19 +1,25 @@
-import dotenv from 'dotenv';
 import esbuild from 'esbuild';
-import { sassPlugin } from 'esbuild-sass-plugin';
-import { parseAsEnvs } from 'esbuild-env-parsing';
+import open from 'open';
+import chalk from 'chalk';
 
-dotenv.config({});
-// TODO: Averiguar porqué esbuild.serve no levantaba el servidor...
-// TODOENG: Find out why esbuild.serve doesn't starts a server...
+import buildOptions from './build.options.js';
+import browsers from './browsers.js';
+
+const browser = browsers.chrome;
 esbuild.serve({
   servedir: 'www',
-  entryPoints: ['src/index.tsx'],
-  bundle: true,
-  outfile: 'www/js',
-  sourcemap: true,
-  minify: true,
+  host: 'localhost',
   port: 2022,
-  define: parseAsEnvs(['REACT_APP_API_URL', 'REACT_APP_ENV', 'REACT_APP_AUTH_URL', 'REACT_APP_REDIRECT_URL', 'REACT_APP_CLIENT_ID', 'REACT_APP_CLIENT_SECRET']),
-  plugins:[sassPlugin()],
-}).then((server) => server.stop());
+}, buildOptions)
+  .then((server) => {
+    const url = `http://${server.host}:${server.port}`;
+    console.log(chalk.green('\n\n🚀 Server running on'), chalk.green.underline(url));
+    try {
+      const app = { name: browser.name, arguments: [browser.private] };
+      void open(`${server.host}:${server.port}`, { app, wait: true }).then(() => server.stop());
+      console.log(chalk.green('🔭 Client running on', browser.name))
+    } catch (error) {
+      console.log(chalk.redBright('🔥 Error opening the browser:', error));
+    }
+  })
+  .catch((error) => console.log(chalk.red.bold('🔥 Error on server:', error)));
